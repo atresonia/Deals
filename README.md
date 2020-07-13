@@ -1,5 +1,4 @@
 # deals
-<<<<<<< HEAD
 **Depersonalization of deal links**
 
 Given a TSV file containing deals(with personalized links), the program will return the deals with depersonalized links and output the deals to a JSON file.
