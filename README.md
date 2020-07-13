@@ -18,6 +18,4 @@ The first line should contain a header.
 `MAX_WORKERS`: maximum number of worker threads created to process deals
 
 `SIMILARITY_THRESHOLD`: HTML document similarity score is a value between 0.0 and 1.0, inclusive
-=======
-A Python industry project to depersonalize deal links using multithreading and HTTP connection.
->>>>>>> 1dc58fc740e2a3c5c0f2da9e32513e4896327261
+
