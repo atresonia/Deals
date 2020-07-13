@@ -12,14 +12,27 @@ from urllib.parse import urljoin, urlparse
 from timeit import default_timer as timer
 from html_similarity import similarity
 
-HTTP_TIMEOUT_SEC = 10
+# TSV file format: url\tdescritpion (first line: header)
+# the input TSV (tab-separated values) file with format: url\tdescription
+DEALS_INPUT_FILE = "pammcduc_deals.tsv"
+
+# Output file(JSON format)
+DEALS_OUTPUT_FILE = "depersonalized_deals.json"
+
+# maximum number of deals read from input file
+MAX_DEALS = 200
+# maximum number of worker threads created to process deals
+MAX_WORKERS = 40
+
+# HTML document similarity score is a value between 0.0 and 1.0, inclusive
 SIMILARITY_THRESHOLD = 0.7
+
+# HTTP request timeout in seconds (makes sure code doesn't hang)
+HTTP_TIMEOUT_SEC = 10
+
+# headers used to mimic a Chrome browser
 HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) "
                          "Chrome/83.0.4103.97 Safari/537.36"}
-MAX_DEALS = 200
-MAX_WORKERS = 40
-DEALS_INPUT_FILE = "pammcduc_deals.tsv"
-DEALS_OUTPUT_FILE = "depersonalized_deals.json"
 
 Deal = Dict[str, str]
 
