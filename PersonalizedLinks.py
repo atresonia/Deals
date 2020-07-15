@@ -117,6 +117,6 @@ if __name__ == '__main__':
             count_success += 1
     print(f"{count_success} out of {len(out_deals)} deals succeeded")
     # pp.pprint(out_deals)
-    with open(DEALS_OUTPUT_FILE, "w") as outfile:
-        json.dump(out_deals, outfile)
+    with open(DEALS_OUTPUT_FILE, "w", encoding='utf-8') as outfile:
+        json.dump(out_deals, outfile, ensure_ascii=False, indent=4)
     logging.info(f"Elapsed time: {elapsed_time_ms} msec")
